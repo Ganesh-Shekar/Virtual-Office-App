@@ -1,0 +1,26 @@
+.App {
+  text-align: center;
+}
+
+.content {
+  background-color:rgb(36, 36, 36);
+  width: 100vw;
+  height: 100vh;
+}
+
+.images-buffer {
+  display: none;
+}
+
+.main-canvas {
+  display: block;
+  margin: 25px auto;
+}
+
+.videos {
+  text-align: center;
+}
+
+video {
+  margin: 0 10px;
+}
