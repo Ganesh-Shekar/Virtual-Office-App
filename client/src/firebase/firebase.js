@@ -16,15 +16,15 @@ import { getDatabase } from "firebase/database";
 //   measurementId: "G-JDJCEPS4YH"
 // };
 const firebaseConfig = {
-    apiKey: process.env.REACT_APP_apiKey,
-    authDomain: process.env.REACT_APP_authDomain,
-    projectId: process.env.REACT_APP_projectId,
-    storageBucket: process.env.REACT_APP_storageBucket,
-    messagingSenderId: process.env.REACT_APP_messagingSenderId,
-    appId: process.env.REACT_APP_appId,
-    measurementId: process.env.REACT_APP_measurementId,
-    databaseURL: "https://oa-virtoffice-project-default-rtdb.firebaseio.com/",
-  };
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
+  measurementId: process.env.REACT_APP_measurementId,
+  databaseURL: "https://virtualoffice-ded19-default-rtdb.firebaseio.com/",
+};
 
 // Initialize Firebase
 const firebaseApp = initializeApp(firebaseConfig);
