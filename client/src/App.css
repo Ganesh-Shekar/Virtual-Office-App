@@ -1,26 +1,86 @@
+/* Reset default spacing */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
+/* The main container spans the full viewport width & height.
+   Using flex column so children stack vertically. */
 .content {
-  background-color:rgb(36, 36, 36);
-  width: 100vw;
-  height: 100vh;
+  background-color: rgb(36, 36, 36);
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Optional: Add padding if desired */
+  padding: 1rem 0;
 }
 
 .images-buffer {
   display: none;
 }
 
+/* The canvas container:
+   If you want the canvas (map) to remain a fixed size, you can set a max-width.
+   Here, it will center horizontally within the container. */
 .main-canvas {
   display: block;
+  width: 800px; /* for example, 25 tiles * 32px = 800px */
+  max-width: 100%; /* if the screen is smaller, it shrinks */
   margin: 25px auto;
 }
 
+/* The video section container spans the full width,
+   and centers its contents */
 .videos {
+  width: 100%;
   text-align: center;
+  margin-top: 1rem;
 }
 
+/* For video elements, ensure they do not exceed their container's width */
 video {
   margin: 0 10px;
+  max-width: 100%;
+  border-radius: 8px;
+}
+
+/* New styles for video calls container */
+.video-calls-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Style for my video container */
+.my-video-container {
+  position: relative;
+  margin: 0;
+}
+
+.my-video-container::after {
+  content: "You";
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
 }
