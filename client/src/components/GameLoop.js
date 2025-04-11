@@ -33,14 +33,14 @@ const initializeCharacterInFirebase = async (
         position: initialPosition,
         createdAt: new Date().toISOString(),
         name: MY_CHARACTER_INIT_CONFIG.name || "Player",
-        characterClass: MY_CHARACTER_INIT_CONFIG.characterClass,
+        characterClass: MY_CHARACTER_INIT_CONFIG.characterClass
       });
       // console.log(`Initialized character ${characterId} in Firebase`);
     } else {
       // console.log(`Character ${characterId} already exists in Firebase`);
     }
   } catch (error) {
-    // console.error("Error initializing character in Firebase:", error);
+    console.error("Error initializing character in Firebase:", error);
   }
 };
 
@@ -82,14 +82,14 @@ const GameLoop = ({ children, allCharactersData, reduxUpdate }) => {
   const moveMyCharacter = useCallback(
     (e) => {
       const mycharacterData = allCharactersData[MY_CHARACTER_INIT_CONFIG.id];
-
+      
       // Check if character data exists
       if (!mycharacterData || !mycharacterData.position) {
         console.warn("Character data not found, initializing...");
         initializeCharacterInFirebase();
         return;
       }
-
+      
       const currentPosition = mycharacterData.position;
       const key = e.key;
 
