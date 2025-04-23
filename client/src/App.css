@@ -3,9 +3,14 @@
 }
 
 .content {
-  background-color:rgb(36, 36, 36);
+  background-color: rgb(36, 36, 36);
   width: 100vw;
   height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  overflow-y: auto;
 }
 
 .images-buffer {
@@ -14,13 +19,141 @@
 
 .main-canvas {
   display: block;
-  margin: 25px auto;
+  margin: 0 auto 20px;
+  z-index: 2;
 }
 
-.videos {
-  text-align: center;
+.video-calls-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  position: relative;
+  z-index: 1;
 }
 
-video {
-  margin: 0 10px;
+.initiated-calls,
+.received-calls {
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  width: 100%;
+}
+
+.initiated-calls h3,
+.received-calls h3 {
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2rem;
+}
+
+.call-container {
+  margin: 0;
+}
+
+.call-container p {
+  display: none;
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.video-wrapper {
+  position: relative;
+  aspect-ratio: 16/9;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.video-wrapper video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  margin: 0;
+  border: none !important;
+  border-radius: 12px;
+}
+
+.video-wrapper.local video {
+  transform: scaleX(-1);
+}
+
+.video-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 1;
+}
+
+.my-video-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.my-video-container video {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 16/9;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: rgba(0, 0, 0, 0.2);
+  object-fit: cover;
+}
+
+.my-video-container .video-label {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .video-calls-container {
+    padding: 10px;
+  }
+
+  .video-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .my-video-container {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .my-video-container {
+    max-width: 250px;
+  }
 }
