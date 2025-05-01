@@ -95,3 +95,5 @@ The Virtual Office App is structured into two main components: the client and th
 - **Server:** The server is built with Express.js and handles the backend logic, including API endpoints and WebSocket connections. It uses Socket.IO to manage real-time events and interactions between clients.
 
 The client and server communicate over WebSockets to ensure low-latency interactions, making the virtual office experience smooth and responsive. WebRTC is a key component in providing high-quality, real-time video and audio communication.
+
+![Code Architecture Diagram](.client/public/assets/WebRTC.png)
