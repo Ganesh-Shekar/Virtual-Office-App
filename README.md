@@ -4,7 +4,9 @@
 
 The Virtual Office App is designed to facilitate seamless communication and collaboration in a virtual environment. It leverages modern web technologies to provide real-time interaction capabilities, making remote work more efficient and engaging. The application integrates video conferencing to simulate a physical office experience. Users can move around a virtual map, enhancing the interactive and immersive experience of the virtual office.
 
-![App Screenshot](image.png)
+<p align="center">
+  <img src="/image.png" alt="App Screenshot" width="300" />
+</p>
 
 ## Getting Started
 
